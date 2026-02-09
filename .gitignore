@@ -1,1 +1,4 @@
 .env
+
+# PHP Ignore
+vendor/
