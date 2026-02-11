@@ -7,9 +7,12 @@ RUN a2enmod rewrite headers
 
 # (Optional now) Install Postgres PDO driver so we're ready later
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends libpq-dev \
+    && apt-get install -y --no-install-recommends \
+    unzip git zip curl libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql \
     && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY ./docker/000-default.conf /etc/apache2/sites-available/000-default.conf
 

@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+
+# if actual file exists, serve it
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Products API routes
+RewriteRule ^api/products/?$ api/products/index.php [QSA,L]
+RewriteRule ^api/products/([0-9]+)$ api/products/id/index.php [QSA,L]
+
+# Default: return JSON 404 (API-only)
+RewriteRule ^.*$ api/products/index.php [L]

@@ -4,24 +4,26 @@ services:
     build: .
     ports:
       - "8080:80"
+    env_file:
+      - .env
     volumes:
-      - ./html:/var/www/html
+      - ./codebase:/var/www/html
     depends_on:
       - db_prod
+    restart: always
     networks:
       - inft2201_network
 
   db_prod:
     image: postgres:18-bookworm
-    container_name: postgres-db
-    environment:
-      POSTGRES_DB: prod
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
+    container_name: postgres-prod
+    env_file:
+      - .env
     ports:
       - "5432:5432"
     volumes:
       - ./init-prod:/docker-entrypoint-initdb.d
+    restart: always
     networks:
       - inft2201_network
     
