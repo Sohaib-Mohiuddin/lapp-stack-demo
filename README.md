@@ -6,6 +6,7 @@ This repository contains code for a basic REST API which will be built with JWT 
 
 ## **Folder Structure:**
 
+```
 lapp-stack-demo/
 ├── codebase/
 │   ├── api/
@@ -27,7 +28,7 @@ lapp-stack-demo/
 ├── Dockerfile
 ├── docker-compose.yml
 └── .env
-
+```
 
 ## **Installation and Usage: Composer After Build**
 
