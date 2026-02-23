@@ -46,10 +46,23 @@ The API uses JWT tokens for authentication. The tokens are generated using the `
     "password": "ENTER_PASSWORD_HERE"
 }
 ```
-- The response will contain a JWT token which can be used for authentication in subsequent requests.
+
+- You can use this command within terminal if you do not have access to Postman:
+
+```bash
+curl -s http://localhost:3000/auth/login \
+-H "Content-Type: application/json" \
+-d '{"username":"ENTER_USERNAME_HERE","password":"ENTER_PASSWORD_HERE"}' | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])"
+```
+
+- The response will contain a JWT token which can be used for authentication in subsequent requests IF the username and password are valid.
 - Copy the `access_token` from the response and include it in the `Authorization` header of your requests as follows:
     - `Authorization: Bearer access_token_here`
-    - http://localhost:8080/api/products
+    - http://localhost:8080/api/products/
+    - OR in terminal with curl:
+    ```bash
+    curl -s http://localhost:8080/api/products/ -H "Authorization: Bearer access_token_here"
+    ```
 
 
 
