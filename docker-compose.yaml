@@ -13,6 +13,19 @@ services:
     restart: always
     networks:
       - inft2201_network
+  
+  auth:
+    container_name: auth
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      - inft2201_network
 
   db_prod:
     image: postgres:18-bookworm
