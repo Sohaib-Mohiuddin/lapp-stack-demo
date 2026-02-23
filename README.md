@@ -33,3 +33,22 @@ lapp-stack-demo/
 
 `docker compose run --rm app composer install`
 `docker compose run --rm app composer dump-autoload`
+
+## **JWT Tokens**
+
+The API uses JWT tokens for authentication. The tokens are generated using the `verifyBearerOrFail` function in the `AuthClient` class. The tokens are signed using a secret key which is stored in the `.env` file.
+
+- Send POST request to `http://localhost:3000/auth/login` with JSON body:
+```json
+{
+    "username": "ENTER_USERNAME_HERE",
+    "password": "ENTER_PASSWORD_HERE"
+}
+```
+- The response will contain a JWT token which can be used for authentication in subsequent requests.
+- Copy the `access_token` from the response and include it in the `Authorization` header of your requests as follows:
+    - `Authorization: Bearer access_token_here`
+    - http://localhost:8080/api/products
+
+
+
