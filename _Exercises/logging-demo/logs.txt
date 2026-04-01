@@ -1,0 +1,13 @@
+{"timestamp":"2026-04-01T17:46:37+00:00","level":"info","event":"operational_hello","requestId":"req-69cd59fd613a34.92853319","message":"Normal GET \/hello"}
+{"timestamp":"2026-04-01T17:47:26+00:00","level":"info","event":"audit_access","requestId":"req-69cd5a2e0bbf26.39908466","allowed":false}
+{"timestamp":"2026-04-01T17:49:00+00:00","level":"info","event":"audit_access","requestId":"req-69cd5a8c00d819.04196593","allowed":true}
+{"timestamp":"2026-04-01T17:49:35+00:00","level":"error","event":"exception","requestId":"req-69cd5aafd6f793.09441148","message":"Simulated failure for demo"}
+{"timestamp":"2026-04-01T18:00:45+00:00","level":"info","event":"operational_demo","requestId":"req-69cd5d4d8a9176.83282573","details":"Demo request started"}
+{"timestamp":"2026-04-01T18:00:45+00:00","level":"info","event":"audit_demo","requestId":"req-69cd5d4d8a9176.83282573","allowed":true}
+{"timestamp":"2026-04-01T18:00:45+00:00","level":"error","event":"demo_exception","requestId":"req-69cd5d4d8a9176.83282573","message":"Simulated demo exception"}
+{"timestamp":"2026-04-01T18:01:08+00:00","level":"info","event":"operational_demo","requestId":"req-69cd5d64585c11.83688853","details":"Demo request started"}
+{"timestamp":"2026-04-01T18:01:08+00:00","level":"info","event":"audit_demo","requestId":"req-69cd5d64585c11.83688853","allowed":true}
+{"timestamp":"2026-04-01T18:01:08+00:00","level":"error","event":"demo_exception","requestId":"req-69cd5d64585c11.83688853","message":"Simulated demo exception"}
+{"timestamp":"2026-04-01T18:01:57+00:00","level":"info","event":"operational_demo","requestId":"req-69cd5d954aae94.73923783","details":"Demo request started"}
+{"timestamp":"2026-04-01T18:01:57+00:00","level":"info","event":"audit_demo","requestId":"req-69cd5d954aae94.73923783","allowed":true}
+{"timestamp":"2026-04-01T18:01:57+00:00","level":"error","event":"demo_exception","requestId":"req-69cd5d954aae94.73923783","message":"Simulated demo exception"}
